@@ -9,7 +9,7 @@ layout: home
 
 L'objectif est d'étudier les différents aspects de l'intégration du SQL dans les langages de programmation.
 
-La compétence ciblée est concevoir, gérer et administrer et exploiter les données de l'entreprise, et mettre à disposition toutes les informations sur un bon pilotage de l'entreprise.
+La compétence ciblée est "concevoir, gérer et administrer et exploiter les données de l'entreprise, et mettre à disposition toutes les informations sur un bon pilotage de l'entreprise".
 
 **Chapitres** :
 0. [Rappels de SQL](CM/R3.07_SQL_Lang_Prog-Chapitre0.pptx)
