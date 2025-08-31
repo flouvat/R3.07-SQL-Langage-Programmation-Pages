@@ -11,19 +11,15 @@ mathjax: true
 ## 1 - Rappels de SQL
 Soit la base de données bd1 dont le schéma relationnel est le suivant : 
 
-$Produits(pnom,couleur)$
+- **Produits**(pnom, couleur)
+- **Fournisseurs**(fnom, statut, ville)
+- **Catalogues**(pnom, fnom, prix)
+- **Commandes**(num, cnom, pnom, qte)
 
-$Fournisseurs(fnom,statut,ville)$
-
-$Catalogues(pnom,fnom,prix)$
-
-$Commandes(num,cnom,pnom,qte)$
-
-$Catalogues(pnom) \subseteq Produits(pnom)$
-
-$Catalogues(fnom) \subseteq Fournisseurs(fnom)$
-
-$Commandes(pnom) \subseteq Produits(pnom)$
+Contraintes d'intégrité référentielle :
+- Catalogues(pnom) ⊆ Produits(pnom)
+- Catalogues(fnom) ⊆ Fournisseurs(fnom)
+- Commandes(pnom) ⊆ Produits(pnom)
 
 ### Exemple de données
 
