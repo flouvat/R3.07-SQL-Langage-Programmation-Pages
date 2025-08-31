@@ -1,0 +1,6 @@
+
+ALTER TABLE PRODUCTS DISABLE TRIGGER ALL;
+
+\COPY PRODUCTS FROM  '/Users/frederic 1/Travail/Enseignement/UNC/Cours/BD2/2013/TP/TP1/installation//data_files/prod/prod.csv' WITH DELIMITER ',' 
+
+ALTER TABLE PRODUCTS ENABLE TRIGGER ALL;

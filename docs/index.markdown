@@ -20,7 +20,7 @@ La compétence ciblée est "concevoir, gérer et administrer et exploiter les do
 
 **Volume horaire** :  24 h (14h CM/TD et 10h TP)
 
-**Organisation**
+**Organisation** :
 - Semaine 1 (08/09) :
   - CM/TD (2h) : Rappels + Programmation procédurale en SQL
   - CM/TD (2h) : Programmation procédurale en SQL 
@@ -39,4 +39,5 @@ La compétence ciblée est "concevoir, gérer et administrer et exploiter les do
   - CC2 - Test papier (2h)
 
 Quelques références bibliographiques :
-- 
+- http://docs.postgresqlfr.org
+- www.postgresql.org/docs/

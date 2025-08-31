@@ -1,0 +1,6 @@
+
+ALTER TABLE INVENTORY DISABLE TRIGGER ALL;
+
+\COPY INVENTORY FROM  '/Users/frederic 1/Travail/Enseignement/UNC/Cours/BD2/2013/TP/TP1/installation/data_files/prod/inv.csv' WITH DELIMITER ',' 
+
+ALTER TABLE INVENTORY ENABLE TRIGGER ALL;
