@@ -89,21 +89,14 @@ Pour chaque question ci-dessous, donner une expression en SQL :
 
 Considérons la base de données suivante:
 
-**Product(pid: integer, name: text, min_age: integer, price: integer)**
-
-**Manufacturer(mid: integer, name: varchar(20), address: varchar(50))**
-
-**Supplier(sid: integer, name: varchar(20), address: varchar(50))**
-
-**Client(cid: integer, name: varchar(20))**
-
-**Inventory(pid:integer, stock: integer)**
-
-**Manufactures(mid:integer, pid: integer)**
-
-**Supplies(sid: integer, pid: integer, priceS: integer)**
-
-**Buy(pid: integer, sid: integer, cid: integer, deleveryAdress: varchar(30), qty: integer, dateCde : date)**
+- **Product(pid: integer, name: text, min_age: integer, price: integer)**
+- **Manufacturer(mid: integer, name: varchar(20), address: varchar(50))**
+- **Supplier(sid: integer, name: varchar(20), address: varchar(50))**
+- **Client(cid: integer, name: varchar(20))**
+- **Inventory(pid:integer, stock: integer)**
+- **Manufactures(mid:integer, pid: integer)**
+- **Supplies(sid: integer, pid: integer, priceS: integer)**
+- **Buy(pid: integer, sid: integer, cid: integer, deleveryAdress: varchar(30), qty: integer, dateCde : date)**
 
 La relation **Product** contient des informations sur les jouets vendus par le magasin. La colonne **Product.pid** représente le numéro (unique) du produit. **Product.name** représente le nom du jouet,  **Product.min_age** indique l'age minimum recommandé pour utiliser le jouet, et **priceP** est le prix du produit.
 
