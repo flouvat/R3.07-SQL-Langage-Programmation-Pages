@@ -11,19 +11,19 @@ mathjax: true
 ## 1 - Rappels de SQL
 Soit la base de données bd1 dont le schéma relationnel est le suivant : 
 
-- **Produits(pnom, couleur)**
-- **Fournisseurs(fnom, statut, ville)**
-- **Catalogues(pnom, fnom, prix)**
-- **Commandes(num, cnom, pnom, qte)**
+- **produits(pnom, couleur)**
+- **fournisseurs(fnom, statut, ville)**
+- **catalogues(pnom, fnom, prix)**
+- **commandes(num, cnom, pnom, qte)**
 
 Contraintes d'intégrité référentielle :
-- Catalogues(pnom) ⊆ Produits(pnom)
-- Catalogues(fnom) ⊆ Fournisseurs(fnom)
-- Commandes(pnom) ⊆ Produits(pnom)
+- catalogues(pnom) ⊆ produits(pnom)
+- catalogues(fnom) ⊆ fournisseurs(fnom)
+- commandes(pnom) ⊆ produits(pnom)
 
 ### Exemple de données
 
-#### **Produits**
+#### **produits**
 <custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Produits%22%7D%7D" />
  | pnom        | couleur |
  |-------------|---------|
@@ -35,7 +35,7 @@ Contraintes d'intégrité référentielle :
 
 ---
 
-#### **Fournisseurs**
+#### **fournisseurs**
 <custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Fournisseurs%22%7D%7D" />
  | fnom       | statut      | ville    |
  |------------|-------------|----------|
@@ -46,7 +46,7 @@ Contraintes d'intégrité référentielle :
 
 ---
 
-#### **Catalogues**
+#### **catalogues**
 <custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Catalogues%22%7D%7D" />
  | pnom       | fnom       | prix |
  |------------|------------|------|
@@ -60,7 +60,7 @@ Contraintes d'intégrité référentielle :
 
 ---
 
-#### **Commandes**
+#### **commandes**
 <custom-element data-json="%7B%22type%22%3A%22table-metadata%22%2C%22attributes%22%3A%7B%22title%22%3A%22Commandess%22%7D%7D" />
  | num  | cnom | pnom       | qte |
  |------|------|------------|-----|
@@ -92,22 +92,22 @@ Pour tester vos requêtes, vous pouvez utiliser l'outil `pgAdmin` pour créer un
 
 Considérons la base de données suivante:
 
-- **Product(pid: integer, name: text, min_age: integer, price: integer)**
-- **Manufacturer(mid: integer, name: varchar(20), address: varchar(50))**
-- **Supplier(sid: integer, name: varchar(20), address: varchar(50))**
-- **Client(cid: integer, name: varchar(20))**
-- **Inventory(pid:integer, stock: integer)**
-- **Manufactures(mid:integer, pid: integer)**
-- **Supplies(sid: integer, pid: integer, priceS: integer)**
-- **Buy(pid: integer, sid: integer, cid: integer, deleveryAdress: varchar(30), qty: integer, dateCde : date)**
+- **product(pid: integer, name: text, min_age: integer, price: integer)**
+- **manufacturer(mid: integer, name: varchar(20), address: varchar(50))**
+- **supplier(sid: integer, name: varchar(20), address: varchar(50))**
+- **client(cid: integer, name: varchar(20))**
+- **inventory(pid:integer, stock: integer)**
+- **manufactures(mid:integer, pid: integer)**
+- **supplies(sid: integer, pid: integer, priceS: integer)**
+- **buy(pid: integer, sid: integer, cid: integer, deleveryAdress: varchar(30), qty: integer, dateCde : date)**
 
-La relation **Product** contient des informations sur les jouets vendus par le magasin. La colonne **Product.pid** représente le numéro (unique) du produit. **Product.name** représente le nom du jouet,  **Product.min_age** indique l'age minimum recommandé pour utiliser le jouet, et **priceP** est le prix du produit.
+La relation **product** contient des informations sur les jouets vendus par le magasin. La colonne **product.pid** représente le numéro (unique) du produit. **product.name** représente le nom du jouet,  **product.min_age** indique l'age minimum recommandé pour utiliser le jouet, et **price** est le prix du produit.
 
-Les relations **Manufacturer** et **Supplier** listent les noms et adressent de tous les fabricants et fournisseurs de jouets. **Manufacturer.mid** et **Supplier.sid** représentent le numéro du fabricant et du fournisseur.
+Les relations **manufacturer** et **supplier** listent les noms et adressent de tous les fabricants et fournisseurs de jouets. **manufacturer.mid** et **supplier.sid** représentent le numéro du fabricant et du fournisseur.
 
-La relation **Clients** stocke les informations sur les clients ayant acheté des jouets. **Inventory** indique le nombre de jouets en stock.
+La relation **clients** stocke les informations sur les clients ayant acheté des jouets. **inventory** indique le nombre de jouets en stock.
 
-Les relations **Manufactures** et **Supplies** associent les produits avec leur fabricant et leurs fournisseurs. Notons qu'un produit ne peut avoir qu'un seul fabricant, mais plusieurs fournisseurs. La relation **Buy** représente les commandes (en cours) effectuées par les clients.
+Les relations **manufactures** et **supplies** associent les produits avec leur fabricant et leurs fournisseurs. Notons qu'un produit ne peut avoir qu'un seul fabricant, mais plusieurs fournisseurs. La relation **buy** représente les commandes (en cours) effectuées par les clients.
 
 1.	Ecrire une fonction retournant le nombre de produits dont le stock est en dessous d'un seuil donné en paramètre.
 2.	Ecrire une fonction retournant l'ensemble des produits dont le stock est en dessous d'un seuil donné en paramètre.
@@ -116,7 +116,7 @@ Les relations **Manufactures** et **Supplies** associent les produits avec leur 
 5.	Ecrire une fonction retournant la marge totale faite par l'entreprise sur chaque produit, cad **(price-priceS)*nbProdVendus**, en fonction des différents fournisseurs.
 6.	Ecrire une fonction qui retourne le produit le plus vendu, la quantité vendue et sa quantité en stock.
 7.	Ecrire une fonction qui, pour un pays donné en paramètre, retourne les 10 produits les plus vendus, les quantités vendues et les quantités en stock.
-8.	Ecrire une procédure supprimant tous les produits d'un fabricant donné (ainsi que le fabricant en question). Les commandes associées à ces produits, et datant de moins de un an, seront stockées dans une table **OldBuy(cid: integer, pname: varchar(20), dateCde : date, qte: integer )**, les autres seront supprimées.
+8.	Ecrire une procédure supprimant tous les produits d'un fabricant donné (ainsi que le fabricant en question). Les commandes associées à ces produits, et datant de moins de un an, seront stockées dans une table **old_buy(cid: integer, pname: varchar(20), dateCde : date, qte: integer )**, les autres seront supprimées.
 9.	Ecrire une fonction qui retourne les produits à réapprovisionner d'urgence, car proches d'une rupture de stock étant donné les commandes clients en cours. Un produit à  réapprovisionner d'urgence est un produit dont la quantité totale en cours de commande par les clients est supérieure à X % du stock. En plus de retourner le nom du produit et la quantité actuelle en stock, cette fonction retournera pour chacun de ces produits la quantité à commander ainsi que le nom des fournisseurs possibles et les coûts de commande fournisseur associés (par ordre croissant).
 
 Pour tester vos requêtes, vous pouvez une nouvelle fois utiliser l'outil `pgAdmin` pour créer une base de données `td1-toys`. A la place d'utiliser un script SQL, vous pouvez ensuite utiliser la sauvegarde de base de données [td1-toys.backup](td1-data/td1-toys.backup) pour importer/restorer les données. 
