@@ -84,7 +84,7 @@ Pour chaque question ci-dessous, donner une expression en SQL :
 6.  Donner le nom, la couleur et le prix moyen de tous les vins commandés.
 7.  Donner le nom des produits qui sont fournis par tous les fournisseurs.
 
-Pour tester vos requêtes, vous pouvez utiliser l'outil `pgAdmin` pour créer une base de données `td1-vins`, puis créer les tables et saisir les données exemples avec le script [td1-vins.sql](/TD/td1-data/td1-vins.sql).
+Pour tester vos requêtes, vous pouvez utiliser l'outil `pgAdmin` pour créer une base de données `td1-vins`, puis créer les tables et saisir les données exemples avec le script [td1-vins.sql](td1-data/td1-vins.sql).
  
 
 
