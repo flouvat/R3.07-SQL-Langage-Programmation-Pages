@@ -21,7 +21,7 @@ Elle est composée de 8 tables et proposée en trois tailles: "small", "medium" 
 
 
 ## Connexion au SGBD
-Pour se connecter à PostgreSQL, nous allons utiliser l'outil pgAdmin3 et suivre les étapes suivantes:
+Pour se connecter à PostgreSQL, nous allons utiliser l'outil pgAdmin et suivre les étapes suivantes:
 1.	lancer pgAdmin.
 2.	Connecter vous au serveur PostgreSQL.
 3.	saisir le mot de passe du compte administrateur postgres : root
@@ -37,7 +37,7 @@ Tout d'abord, il faut créer la base de données en faisant (à partir de pgAdmi
 3.	donner un nom à votre base données. Le nom sera "ds2" dans le cadre de ce TP,
 4.	sauvegarder.
 
-Ensuite, il faut importer les tables et leurs données à partir du fichier [DS2light.backup](/TP/tp1-data/DS2light.backup) en faisant
+Ensuite, il faut importer les tables et leurs données à partir du fichier [DS2light.backup](tp1-data/DS2light.backup) en faisant
 1.	un clique droit sur la base de données "ds2",
 2.	 "Restore …",
 3.	sélectionner le fichier "ds2.backup" et cliquer sur "Restore".
