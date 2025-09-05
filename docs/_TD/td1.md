@@ -84,6 +84,9 @@ Pour chaque question ci-dessous, donner une expression en SQL :
 6.  Donner le nom, la couleur et le prix moyen de tous les vins commandés.
 7.  Donner le nom des produits qui sont fournis par tous les fournisseurs.
 
+Pour tester vos requêtes, vous pouvez utiliser l'outil `pgAdmin` pour créer une base de données `td1-vins`, puis créer les tables et saisir les données exemples avec le script [td1-vins.sql](/TD/td1-data/td1-vins.sql).
+ 
+
 
 ## 2 - Programmation procédurale en PL/pgSQL
 
@@ -115,3 +118,6 @@ Les relations **Manufactures** et **Supplies** associent les produits avec leur 
 7.	Ecrire une fonction qui, pour un pays donné en paramètre, retourne les 10 produits les plus vendus, les quantités vendues et les quantités en stock.
 8.	Ecrire une procédure supprimant tous les produits d'un fabricant donné (ainsi que le fabricant en question). Les commandes associées à ces produits, et datant de moins de un an, seront stockées dans une table **OldBuy(cid: integer, pname: varchar(20), dateCde : date, qte: integer )**, les autres seront supprimées.
 9.	Ecrire une fonction qui retourne les produits à réapprovisionner d'urgence, car proches d'une rupture de stock étant donné les commandes clients en cours. Un produit à  réapprovisionner d'urgence est un produit dont la quantité totale en cours de commande par les clients est supérieure à X % du stock. En plus de retourner le nom du produit et la quantité actuelle en stock, cette fonction retournera pour chacun de ces produits la quantité à commander ainsi que le nom des fournisseurs possibles et les coûts de commande fournisseur associés (par ordre croissant).
+
+Pour tester vos requêtes, vous pouvez une nouvelle fois utiliser l'outil `pgAdmin` pour créer une base de données `td1-toys`. A la place d'utiliser un script SQL, vous pouvez ensuite utiliser la sauvegarde de base de données [td1-toys.backup](/TD/td1-data/td1-toys.backup) pour importer/restorer les données. 
+

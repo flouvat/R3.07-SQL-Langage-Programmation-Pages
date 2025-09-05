@@ -37,7 +37,7 @@ Tout d'abord, il faut créer la base de données en faisant (à partir de pgAdmi
 3.	donner un nom à votre base données. Le nom sera "ds2" dans le cadre de ce TP,
 4.	sauvegarder.
 
-Ensuite, il faut importer les tables et leurs données à partir du fichier [DS2light.backup](/TP/data/tp1/DS2light.backup) en faisant
+Ensuite, il faut importer les tables et leurs données à partir du fichier [DS2light.backup](/TP/tp1-data/DS2light.backup) en faisant
 1.	un clique droit sur la base de données "ds2",
 2.	 "Restore …",
 3.	sélectionner le fichier "ds2.backup" et cliquer sur "Restore".
