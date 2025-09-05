@@ -39,5 +39,5 @@ La compétence ciblée est "concevoir, gérer et administrer et exploiter les do
   - CC2 - Test papier (2h)
 
 Quelques références bibliographiques :
-- http://docs.postgresqlfr.org
-- www.postgresql.org/docs/
+- [http://docs.postgresqlfr.org](http://docs.postgresqlfr.org)
+- [www.postgresql.org/docs/](www.postgresql.org/docs/)
