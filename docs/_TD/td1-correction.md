@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TD 1 -- Correction"
+title: "TD 1 -- Exemple de solutions"
 categories: jekyll update
 
 mathjax: true
