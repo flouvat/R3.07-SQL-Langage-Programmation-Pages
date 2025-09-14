@@ -21,10 +21,14 @@ Elle est composée de 8 tables et proposée en trois tailles: "small", "medium" 
 
 
 ## Connexion au SGBD
-Pour se connecter à PostgreSQL, nous allons utiliser l'outil pgAdmin et suivre les étapes suivantes:
+
+Si vous utilisez les machines de l'IUT, il faut d'abord créer votre espace web pédagogique AMU (cf. [ENT>"Documentation Utilisateur">"Votre espace web pédagogique AMU"](dud.univ-amu.fr/fr/votre-espace-web-pedagogique-amu)). Attention, la création prend un jour. Cette espace web correspond au déploiement d'un serveur web sur une des machines virtuelles (VM) d'AMU. Ce serveur intègre notamment un serveur de bases de données PostgreSQL dans lequel sera créé une base de données (à votre nom). Pour vous connecter à ce serveur, vous utiliserez le client web Phppgadmin. Il est accessible à l'URL de votre espace web suivie de « phppgadmin » (soit https://prenom-nom(-etu).pedaweb.univ-amu.fr/phppgadmin). L'authentification se fait classiquement sur le portail AMU.
+
+
+Sur votre machine personnelle, vous pouvez aussi [installer PostgreSQL](https://www.postgresql.org/download) et son outil d’administration [pgAdmin](https://www.pgadmin.org) (installable en même temps que PostgreSQL). Ensuite, il suffit de suivre les étapes suivantes pour se connecter :
 1.	lancer pgAdmin.
 2.	Connecter vous au serveur PostgreSQL.
-3.	saisir le mot de passe du compte administrateur postgres : root
+3.	saisir le mot de passe du compte administrateur postgres (défini à l'installation)
 4.	cliquer sur le bouton ok.
 
 
@@ -32,22 +36,18 @@ Pour se connecter à PostgreSQL, nous allons utiliser l'outil pgAdmin et suivre 
 
 La première étape est de créer la base de données et de charger son contenu (en étant connecté avec le compte postgres). Afin de faciliter l'installation, Dell a fournit un script permettant de créer les tables et de charger leur contenu.
 
-Si vous utilisez phpPgAdmin sur votre espace web pédagogique AMU (cf. [ENT>"Documentation Utilisateur">"Votre espace web pédagogique AMU"](dud.univ-amu.fr/fr/votre-espace-web-pedagogique-amu)), vous n'avez pas les droits pour créer une nouvelle base de données. A la place, vous allez créer un nouveau [Schéma](https://docs.postgresql.fr/17/ddl-schemas.html) dans la base de données qui a été créée avec votre espace web AMU, et importer vos données. Pour cela, il vous suffit de
+Si vous utilisez phpPgAdmin sur votre espace web pédagogique AMU, vous n'avez pas les droits pour créer une nouvelle base de données. A la place, vous allez créer un nouveau [Schéma](https://docs.postgresql.fr/17/ddl-schemas.html) dans la base de données qui a été créée avec votre espace web AMU, et importer vos données. Pour cela, il vous suffit de
 1. cliquer sur votre base de données dans le menu de gauche,
 2. cliquer sur le lien "Créer un schéma" et de lui donner le nom "tp1-ds2",
 3. cliquer sur "SQL" dans le menu situé dans le bandeau supérieur de la page (ce qui ouvrira un éditeur de requête SQL directement connecté au schéma créé),
 4. importer le script SQL [tp1-ds2.sql](tp1-data/tp1-ds2.sql)
 
-Si vous utilisez pgAdmin, vous pouvez directement créer une nouvelle base de données en faisant :
+Si vous utilisez votre machine personnelle et pgAdmin, vous pouvez directement créer une nouvelle base de données en faisant :
 1.	cliquer droit sur "Databases" dans le navigateur d'objets de pgAdmin4,
 2.	cliquer sur "Create > Database … " dans le menu contextuel qui s'affiche,
-3.	donner un nom à votre base données. Le nom sera "tp1-ds2" dans le cadre de ce TP,
-4.	sauvegarder.
+3.	donner le  nom "tp1-ds2"  à votre base données, et sauvegarder,
+4. importer les tables et les données à partir du fichier [ds2light.backup](tp1-data/ds2light.backup) en faisant un clique droit sur la base de données "tp1-ds2", puis "Restore …", 
 
-Ensuite, il faut importer les tables et leurs données à partir du fichier [ds2light.backup](tp1-data/ds2light.backup) en faisant
-1.	un clique droit sur la base de données "tp1-ds2",
-2.	 "Restore …",
-3.	sélectionner le fichier "ds2light.backup" et cliquer sur "Restore".
 
 ## Analyse de la base de données
 
