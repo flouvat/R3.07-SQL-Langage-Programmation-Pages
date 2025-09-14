@@ -31,10 +31,17 @@ Pour se connecter à PostgreSQL, nous allons utiliser l'outil pgAdmin et suivre 
 ## Création de la base de données et chargement des données
 
 La première étape est de créer la base de données et de charger son contenu (en étant connecté avec le compte postgres). Afin de faciliter l'installation, Dell a fournit un script permettant de créer les tables et de charger leur contenu.
-Tout d'abord, il faut créer la base de données en faisant (à partir de pgAdmin)
+
+Si vous utilisez phpPgAdmin sur votre espace web pédagogique AMU (cf. [ENT>"Documentation Utilisateur">"Votre espace web pédagogique AMU"](dud.univ-amu.fr/fr/votre-espace-web-pedagogique-amu)), vous n'avez pas les droits pour créer une nouvelle base de données. A la place, vous allez créer un nouveau [Schéma](https://docs.postgresql.fr/17/ddl-schemas.html) dans la base de données qui a été créée avec votre espace web AMU, et importer vos données. Pour cela, il vous suffit de
+1. cliquer sur votre base de données dans le menu de gauche,
+2. cliquer sur le lien "Créer un schéma" et de lui donner le nom "tp1-ds2",
+3. cliquer sur "SQL" dans le menu situé dans le bandeau supérieur de la page (ce qui ouvrira un éditeur de requête SQL directement connecté au schéma créé),
+4. importer le script SQL [tp1-ds2.sql](tp1-data/tp1-ds2.sql)
+
+Si vous utilisez pgAdmin, vous pouvez directement créer une nouvelle base de données en faisant :
 1.	cliquer droit sur "Databases" dans le navigateur d'objets de pgAdmin4,
 2.	cliquer sur "Create > Database … " dans le menu contextuel qui s'affiche,
-3.	donner un nom à votre base données. Le nom sera "ds2" dans le cadre de ce TP,
+3.	donner un nom à votre base données. Le nom sera "tp1-ds2" dans le cadre de ce TP,
 4.	sauvegarder.
 
 Ensuite, il faut importer les tables et leurs données à partir du fichier [ds2light.backup](tp1-data/ds2light.backup) en faisant
@@ -53,7 +60,7 @@ Si aucune documentation n'est fournie sur la base de données sur laquelle vous 
 Un SGBD relationnel conserve des méta-informations sur les relations (p.ex. informations sur les schémas, les contraintes d'intégrité et leur indexes) dans des tables spéciales appelées [catalogues systèmes](https://docs.postgresql.fr/17/catalogs-overview.html). Grâce à cette fonctionnalité, il est possible d'avoir des informations sur tous les objets d'une base de données en faisant de simples requêtes SQL. Par exemple, il est possible d'avoir la liste des relations d'une base de données en faisant la requête:
 
 ```SQL
-SELECT * FROM pg_tables WHERE tableowner='yourlogin'
+SELECT * FROM pg_tables WHERE tableowner='user_name'
 ```
 
 Il est important de noter que les outils graphiques tel que pgAdmin s'appuient aussi sur ces catalogues systèmes pour afficher les informations de la base de données dans leur interface.
