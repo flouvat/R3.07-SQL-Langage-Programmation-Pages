@@ -4,7 +4,8 @@ title: Liste des TD
 permalink: /TD/
 ---
 
-{% for TD in site.TD %}
+{% assign sorted_TD = site.TD | sort: "title" %}
+{% for TD in sorted_TD %}
 
 - [{{ TD.title }}]({{site.baseurl}}{{ TD.url }})
 
