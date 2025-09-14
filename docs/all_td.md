@@ -4,11 +4,17 @@ title: Liste des TD
 permalink: /TD/
 ---
 
-{% assign td_pages = site.pages | where_exp: "page", "page.path contains 'TD/' and not page.path contains 'TD/solutions/'" | sort: "title" %}
-
+{% assign td_pages = site.pages | where_exp: "page", "page.path contains 'TD/'" | sort: "title" %}
 {% for TD in td_pages %}
+  {% unless TD.path contains 'TD/solutions/' %}
+    - [{{ TD.title }}]({{ site.baseurl }}{{ TD.url }})
+  {% endunless %}
+{% endfor %}
 
-- [{{ TD.title }}]({{site.baseurl}}{{ TD.url }})
+### Liste des Solutions
 
+{% assign solution_pages = site.pages | where_exp: "page", "page.path contains 'TD/solutions/'" | sort: "title" %}
+{% for solution in solution_pages %}
+  - [{{ solution.title }}]({{ site.baseurl }}{{ solution.url }})
 {% endfor %}
 
