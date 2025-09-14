@@ -6,7 +6,7 @@ categories: jekyll update
 mathjax: true
 ---
 
-# TD 1 -- Rappels et Programmation procédurale en PL/pgSQL -- Correction
+# TD 1 -- Rappels et Programmation procédurale en PL/pgSQL
 
 ## 1 - Rappels de SQL
 
