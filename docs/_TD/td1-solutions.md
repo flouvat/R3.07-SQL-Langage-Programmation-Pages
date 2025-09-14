@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TD 1 -- Rappels et Programmation procédurale en PL/pgSQL -- Exemple de solutions"
+title: "TD 1 -- Exemple de solutions"
 categories: jekyll update
 
 mathjax: true
