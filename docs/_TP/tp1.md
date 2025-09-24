@@ -40,13 +40,13 @@ Si vous utilisez phpPgAdmin sur votre espace web pédagogique AMU, vous n'avez p
 1. cliquer sur votre base de données dans le menu de gauche,
 2. cliquer sur le lien "Créer un schéma" et de lui donner le nom "tp1-ds2",
 3. cliquer sur "SQL" dans le menu situé dans le bandeau supérieur de la page (ce qui ouvrira un éditeur de requête SQL directement connecté au schéma créé),
-4. importer le script SQL [tp1-ds2.sql](tp1-data/tp1-ds2.sql)
+4. importer le script SQL [tp1-ds2.sql](data/tp1-ds2.sql)
 
 Si vous utilisez votre machine personnelle et pgAdmin, vous pouvez directement créer une nouvelle base de données en faisant :
 1.	cliquer droit sur "Databases" dans le navigateur d'objets de pgAdmin4,
 2.	cliquer sur "Create > Database … " dans le menu contextuel qui s'affiche,
 3.	donner le  nom "tp1-ds2"  à votre base données, et sauvegarder,
-4. importer les tables et les données à partir du fichier [ds2light.backup](tp1-data/ds2light.backup) en faisant un clique droit sur la base de données "tp1-ds2", puis "Restore …", 
+4. importer les tables et les données à partir du fichier [ds2light.backup](data/ds2light.backup) en faisant un clique droit sur la base de données "tp1-ds2", puis "Restore …", 
 
 
 ## Analyse de la base de données
