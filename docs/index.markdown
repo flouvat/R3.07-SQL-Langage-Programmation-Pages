@@ -36,7 +36,7 @@ La compétence ciblée est "concevoir, gérer et administrer et exploiter les do
   - CM/TD (2h) : Contrôler les transactions
 - Semaine 5 (06/10) :
   - TD (4h) : Contrôler les transactions
-  - CC2 - Test papier (2h)
+  - CC2 - Test papier (1h30)
 
 Quelques références bibliographiques :
 - [http://docs.postgresqlfr.org](http://docs.postgresqlfr.org)
